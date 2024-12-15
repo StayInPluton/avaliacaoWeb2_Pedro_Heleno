@@ -49,34 +49,37 @@ const Products = () => {
     : products;
 
   return (
-    <div className='mt-3'>
+    <div className='mt-4 '>
       <div className="container">
         <div className="row">
-          <div className=''>
-              <h5>Filtrar Produtos</h5>
+          <div>
+            <h5>Filtrar Produtos</h5>
 
-              <select
-                className="form-select"
-                onChange={e => setSelectedCategory(e.target.value)}
-                value={selectedCategory}
-              >
-                <option value="">Todas as Categorias</option>
-                {categories.map(category => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
+            <select
+              className="form-select"
+              onChange={e => setSelectedCategory(e.target.value)}
+              value={selectedCategory}
+            >
+              <option value="">Todas as Categorias</option>
+              {categories.map(category => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
           </div>
+
+
 
           {/* TODO resolver parte do 'cerregando' */}
           <div className="container text-center mt-5 mb-5">
+            <h2>Produtos</h2>
             {loading && <h2>Carregando...</h2>}
             {error && <h2 className="text-danger">{error}</h2>}
           </div>
 
 
-          
+
           {filteredProducts.map(product => (
             <div className="col-sm-4 d-flex justify-content-center mb-4" key={product.id}>
 
